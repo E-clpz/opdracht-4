@@ -1,18 +1,44 @@
-/*////////////////////////
-    Table of Contents
-    1. Global Styles
-    2. Typography
-    3. Layout
-        3.1 Reusables
-        3.2 Other
-    4. Areas
-        4.1 Header
-        4.2 Introduction
-        etc.
-    5. Media Queries
-////////////////////////*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* ------------------------------- 1. Global Styles -------------------------------- */
+:root {
+    h1, h2, h3 {
+        font-family: merriweather, sans-serif;
+    }
+    p {
+        font-family: Roboto, sans-serif;
+    }
+    background-color: #F3F6F9;
+    color: #0C0C0C;
+
+    button, input {
+        font-family: inherit;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    --grey:#F3F6F9;
+    --blue:#4845E4;
+    --purple:#5722CD;
+    --Bigpurple:#F2F0FF;
+    --button:#ED4385;
+    --standard:#0C0C0C;
+    --icon-text:#7A7A7A;
+}
+
 
 /* ------------------------------- 2. Typography ----------------------------------- */
 
@@ -20,12 +46,240 @@
 
 /* --------------- 3.1 Reusables ----------------------- */
 
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+.inner-container {
+    display: flex;
+    flex-basis: 1200px;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    border: 2px dashed orange;
+}
 /* --------------- 3.2 Other --------------------------- */
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
+.header-navigation {
+    display: flex;
+    color: var(--grey);
+    justify-content: flex-end;
+    font-family: Roboto, sans-serif;
+}
 
-/* --------------- 4.2 Introduction ------------------- */
+.header-navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 20px;
+    padding-right: 50px;
+}
 
+.header-navigation ul li {
+    margin: 0 25px;
+}
+
+.header-navigation ul li a {
+    color: var(--grey);
+    text-decoration: none;
+}
+
+.header-section {
+    display: flex;
+    background: linear-gradient(90deg, #4845E4, #5722CD);
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+.header-content-wrapper {
+    max-width: 900px;
+    padding: 50px;
+}
+.header-content {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 500px;
+    align-items: center;
+}
+
+.header-content h1 {
+    color: var(--Bigpurple);
+    font-size: 2.5em;
+    margin: 20px
+}
+
+.header-content h3 {
+    color: var(--Bigpurple);
+    font-size: 1.5em;
+    font-weight: lighter;
+}
+header button {
+    color: white;
+    background-color: var(--button);
+    font-weight: lighter;
+    border: none;
+    border-radius: 45px;
+    padding: 20px 40px;
+    margin-top: 30px;
+}
+
+.header-content-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* --------------- 4.2 Hello ------------------- */
+.hello-section-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0 50px;
+}
+
+.hello-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+    color: var(--purple);
+}
+
+.hello-section h2 {
+    margin: 15px;
+    text-align: center;
+}
+.hello-section p {
+    display: flex;
+    flex-direction: row;
+    color: var(--standard);
+    padding-top: 60px;
+}
+
+.hello-section a {
+    color: var(--purple);
+    text-decoration: none;
+    padding:5px;
+}
+/* --------------- 4.3 Work ------------------- */
+.work-section-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 600px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    border:2px solid red;
+}
+
+.work-section-1 {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+}
+
+.work-section-2 {
+    display: flex;
+    flex-direction: row-reverse;
+    border: 2px solid green;
+}
+
+.work-section-3 {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+}
+
+.work-section img {
+    flex-basis: 150px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.work-section article {
+    color: var(--standard);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.work-section h3 {
+    color: var(--standard);
+}
+
+.work-section a {
+    color: var(--purple);
+    text-decoration: none;
+}
+/* --------------- 4.4 Services ------------------- */
+.services-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 200px 250px 150px 250px;
+}
+
+.services-section article {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 370px;
+    padding: 15px;
+    border: 1px solid var(--purple);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 15px;
+}
+
+.services-section img {
+    width: 70px;
+    margin: 10px;
+}
+.services-section h3 {
+    color: var(--purple);
+    margin: 0 10px;
+}
+
+.services-section p {
+    color: var(--icon-text);
+    margin: 10px;
+}
+/* --------------- 4.5 Final ------------------- */
+.final-section-wrapper {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    color: var(--grey);
+    background: linear-gradient(90deg, #4845E4, #5722CD);
+}
+
+.final-section {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 1000px;
+    padding: 50px;
+}
+.final-section button {
+    color: white;
+    background-color: var(--button);
+    font-weight: lighter;
+    border: none;
+    border-radius: 45px;
+    padding: 20px 40px;
+    margin-top: 30px;
+/* --------------- 4.6 Footer ------------------- */
+footer {
+    background-color: #0C0C0C;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
 /* ------------------------------- 5. Media Queries -------------------------------- */
+@media screen and (max-width: 576px) {
+
+}
